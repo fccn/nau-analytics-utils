@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 # Set Spark and Hadoop versions
-ENV SPARK_VERSION=3.5.0
+ENV SPARK_VERSION=3.5.7
 ENV HADOOP_VERSION=3
 # Install dependencies
 RUN apt-get update && apt-get install -y \
