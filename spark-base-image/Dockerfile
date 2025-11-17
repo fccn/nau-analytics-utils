@@ -98,7 +98,7 @@ ENV PYTHONPATH="${SPARK_HOME}/python:${SPARK_HOME}/python/lib/py4j-0.10.9.7-src.
 
 # Install matching PySpark version and dependencies
 RUN pip install --no-cache-dir \
-    pyspark==3.5.6 \
+    pyspark==3.5.7 \
     pandas \
     numpy 
 
