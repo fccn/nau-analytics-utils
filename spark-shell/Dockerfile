@@ -22,4 +22,4 @@ RUN wget https://dlcdn.apache.org/spark/spark-${SPARK_VERSION}/spark-${SPARK_VER
 # Set Spark bin in PATH
 ENV PATH="/opt/spark/bin:${PATH}"
 # Set entrypoint
-ENTRYPOINT ["/usr/bin/tini", "--", "/bin/bash"]
+ENTRYPOINT ["/opt/spark/bin/spark-submit"]
