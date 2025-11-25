@@ -21,5 +21,5 @@ RUN wget https://dlcdn.apache.org/spark/spark-${SPARK_VERSION}/spark-${SPARK_VER
 && rm spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz
 # Set Spark bin in PATH
 ENV PATH="/opt/spark/bin:${PATH}"
-# Set entrypoint
+# Set entrypoint 
 ENTRYPOINT ["/usr/bin/tini", "--", "/bin/bash", "-c", "set -e; exec \"$@\"", "--"]
