@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0","wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nau_analytics_data_product_utils_lib"
+version = "1.0.0"
+description = "Utility functions to use across all data products"
+authors = [
+  { name = "Vitor Piña" }
+]
+requires-python = "==3.11"
+
+dependencies = [
+  "pyspark==3.5.7"
+]
+
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]   
