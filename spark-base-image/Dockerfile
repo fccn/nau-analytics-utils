@@ -55,6 +55,7 @@ RUN apt-get update && apt-get install -y \
     tini \
     ca-certificates \
     procps \
+    git \
  && rm -rf /var/lib/apt/lists/*
 
 # Copy compiled Python
