@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -y \
     libffi-dev \
     libsqlite3-dev \
     libbz2-dev \
+    git \
  && rm -rf /var/lib/apt/lists/*
 WORKDIR /usr/src
 RUN wget https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tgz \
@@ -54,6 +55,7 @@ RUN apt-get update && apt-get install -y \
     tini \
     ca-certificates \
     procps \
+    git \
  && rm -rf /var/lib/apt/lists/*
 
 # Copy compiled Python
