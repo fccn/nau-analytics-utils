@@ -1,8 +1,9 @@
 FROM apache/superset:4.1.4-py310
 
-# Dialect Trino + driver PyMySQL para o metastore MySQL 
-# Dialect ClickHouse + driver ClickHouse para consultas
-RUN pip install --no-cache-dir \
-  "trino" "pymysql" \
-  "clickhouse-sqlalchemy" \
-  "clickhouse-driver"
+USER root
+
+# Instalar apenas os extras que precisamos, sem permitir que o pip altere deps core do Superset
+RUN pip install --no-cache-dir --no-deps "trino" "pymysql" \
+ && pip install --no-cache-dir --no-deps "clickhouse-connect[sqlalchemy]"
+
+USER superset
