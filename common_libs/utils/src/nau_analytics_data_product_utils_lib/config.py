@@ -10,3 +10,4 @@ class Config:
     iceberg_catalog_user: str
     iceberg_catalog_password: str
     iceberg_catalog_warehouse: str
+    icerberg_catalog_name: str

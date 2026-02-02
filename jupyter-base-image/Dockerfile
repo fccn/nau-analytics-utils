@@ -1,6 +1,7 @@
 FROM nauedu/nau-analytics-base-spark:latest
 
 # Env for Jupyter + PySpark
+
 ENV HOME=/home/spark \
     JUPYTER_PORT=8888 \
     JUPYTER_DIR=/opt/spark/work-dir/notebooks \
