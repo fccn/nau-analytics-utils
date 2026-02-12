@@ -19,12 +19,24 @@ def get_iceberg_spark_session(cfg: Config) -> SparkSession:
                 "/opt/spark/jars/mysql-connector-j-8.3.0.jar," 
                 "/opt/spark/jars/iceberg-spark-runtime-3.5_2.12-1.10.0.jar") \
         .config("spark.sql.extensions", "org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions")\
-        .config(f"spark.sql.catalog.{cfg.iceberg_catalog_name}","org.apache.iceberg.spark.SparkCatalog") \
-        .config(f"spark.sql.catalog.{cfg.iceberg_catalog_name}.type","jdbc") \
-        .config(f"spark.sql.catalog.{cfg.iceberg_catalog_name}.uri", cfg.iceberg_catalog_uri) \
-        .config(f"spark.sql.catalog.{cfg.iceberg_catalog_name}.jdbc.user", cfg.iceberg_catalog_user) \
-        .config(f"spark.sql.catalog.{cfg.iceberg_catalog_name}.jdbc.password", cfg.iceberg_catalog_password)\
-        .config(f"spark.sql.catalog.{cfg.iceberg_catalog_name}.warehouse", cfg.iceberg_catalog_warehouse) \
+        .config(f"spark.sql.catalog.{cfg.bronze_iceberg_catalog_name}","org.apache.iceberg.spark.SparkCatalog") \
+        .config(f"spark.sql.catalog.{cfg.bronze_iceberg_catalog_name}.type","jdbc") \
+        .config(f"spark.sql.catalog.{cfg.bronze_iceberg_catalog_name}.uri", cfg.bronze_iceberg_catalog_uri) \
+        .config(f"spark.sql.catalog.{cfg.bronze_iceberg_catalog_name}.jdbc.user", cfg.iceberg_catalog_user) \
+        .config(f"spark.sql.catalog.{cfg.bronze_iceberg_catalog_name}.jdbc.password", cfg.iceberg_catalog_password)\
+        .config(f"spark.sql.catalog.{cfg.bronze_iceberg_catalog_name}.warehouse", cfg.bronze_iceberg_catalog_warehouse) \
+        .config(f"spark.sql.catalog.{cfg.silver_iceberg_catalog_name}","org.apache.iceberg.spark.SparkCatalog") \
+        .config(f"spark.sql.catalog.{cfg.silver_iceberg_catalog_name}.type","jdbc") \
+        .config(f"spark.sql.catalog.{cfg.silver_iceberg_catalog_name}.uri", cfg.silver_iceberg_catalog_uri) \
+        .config(f"spark.sql.catalog.{cfg.silver_iceberg_catalog_name}.jdbc.user", cfg.iceberg_catalog_user) \
+        .config(f"spark.sql.catalog.{cfg.silver_iceberg_catalog_name}.jdbc.password", cfg.iceberg_catalog_password)\
+        .config(f"spark.sql.catalog.{cfg.silver_iceberg_catalog_name}.warehouse", cfg.silver_iceberg_catalog_warehouse) \
+        .config(f"spark.sql.catalog.{cfg.gold_iceberg_catalog_name}","org.apache.iceberg.spark.SparkCatalog") \
+        .config(f"spark.sql.catalog.{cfg.gold_iceberg_catalog_name}.type","jdbc") \
+        .config(f"spark.sql.catalog.{cfg.gold_iceberg_catalog_name}.uri", cfg.gold_iceberg_catalog_uri) \
+        .config(f"spark.sql.catalog.{cfg.gold_iceberg_catalog_name}.jdbc.user", cfg.iceberg_catalog_user) \
+        .config(f"spark.sql.catalog.{cfg.gold_iceberg_catalog_name}.jdbc.password", cfg.iceberg_catalog_password)\
+        .config(f"spark.sql.catalog.{cfg.gold_iceberg_catalog_name}.warehouse", cfg.gold_iceberg_catalog_warehouse) \
         .config("spark.hadoop.fs.s3a.access.key", cfg.s3_access_key) \
         .config("spark.hadoop.fs.s3a.secret.key", cfg.s3_secret_key) \
         .config("spark.hadoop.fs.s3a.endpoint", cfg.s3_endpoint) \
