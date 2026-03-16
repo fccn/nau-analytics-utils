@@ -1,4 +1,4 @@
-FROM apache/superset:4.1.4-py310
+FROM apache/superset:6.0.0-py310
 
 USER root
 RUN pip install --no-cache-dir \
