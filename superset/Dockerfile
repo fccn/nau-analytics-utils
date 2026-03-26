@@ -5,5 +5,9 @@ RUN pip install --no-cache-dir \
   "pymysql" \
   "lz4" \
   "trino[sqlalchemy]" \
-  "clickhouse-connect[sqlalchemy]"
+  "clickhouse-connect[sqlalchemy]" \
+  "authlib" \
+  "PyJWT" \
+  "requests"
+
 USER superset
